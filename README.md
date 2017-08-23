@@ -88,7 +88,7 @@ Options can be passed via a JavaScript object through the `mediumZoom` call.
 | background   | string  | `"#fff"` | Color of the overlay                                                |
 | scrollOffset | integer | `48`     | Number of pixels to scroll to dismiss the zoom                      |
 | metaClick    | boolean | `true`   | Enables the action on meta click (opens the link / image source)    |
-| defaultTimeout    | integer | 150   | Timeout before ZoomOut occurs    |
+| defaultTimeout    | integer | `150`   | Timeout before ZoomOut occurs    |
 
 ```js
 mediumZoom('[data-action="zoom"]', {
