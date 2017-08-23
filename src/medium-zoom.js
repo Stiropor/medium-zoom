@@ -11,10 +11,9 @@ const mediumZoom = (selector, {
   margin = 0,
   background = '#fff',
   scrollOffset = 48,
-  metaClick = true
+  metaClick = true,
+  defaultTimeout = 150
 } = {}) => {
-  require('./medium-zoom.css')
-
   const SUPPORTED_FORMATS = ['IMG']
   const KEY_ESC = 27
   const KEY_Q = 81
@@ -92,7 +91,7 @@ const mediumZoom = (selector, {
       target.style.transform = 'none'
 
       target.addEventListener('transitionend', onZoomOutEnd)
-    }, 150)
+    }, options.defaultTimeout)
   }
 
   const triggerZoom = event => {
@@ -226,7 +225,8 @@ const mediumZoom = (selector, {
     margin,
     background,
     scrollOffset,
-    metaClick
+    metaClick,
+    defaultTimeout
   }
 
   if (selector instanceof Object) {
