@@ -60,13 +60,13 @@ const mediumZoom = (selector, {
   const zoom = () => {
     if (!target) return
 
+    document.body.appendChild(overlay)
+
     const event = new Event('show')
     target.dispatchEvent(event)
 
     scrollTop = document.documentElement.scrollTop || document.body.scrollTop
     isAnimating = true
-
-    document.body.appendChild(overlay)
 
     requestAnimationFrame(() => {
       document.body.classList.add('medium-zoom--open')

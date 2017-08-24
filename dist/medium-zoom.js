@@ -152,13 +152,13 @@ var mediumZoom = function mediumZoom(selector) {
   var zoom = function zoom() {
     if (!target) return;
 
+    document.body.appendChild(overlay);
+
     var event = new Event('show');
     target.dispatchEvent(event);
 
     scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     isAnimating = true;
-
-    document.body.appendChild(overlay);
 
     requestAnimationFrame(function () {
       document.body.classList.add('medium-zoom--open');
